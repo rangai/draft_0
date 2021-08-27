@@ -1,6 +1,9 @@
 import sys
 import json
-from transceiver import send
+from transceiver import (
+    send,
+    MSG_CONTENT,
+)
 
 MY_HOST = '127.0.0.1'
 MY_PORT = sys.argv[1]
@@ -12,7 +15,7 @@ print('MY_PORT:', MY_PORT)
 TEST_HOST='127.0.0.1'
 
 while True:
-    msg_type = 0
+    msg_type = MSG_CONTENT
     to_port = int(input('to_port:'))
     my_msg = input('msg: ')
     msg_dict={'msg_type':msg_type, 'sender':MY_PORT, 'content':my_msg}

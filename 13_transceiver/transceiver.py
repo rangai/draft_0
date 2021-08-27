@@ -1,6 +1,5 @@
 import socket
 import json
-import copy
 
 BUFSIZE=4096
 
