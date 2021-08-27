@@ -5,6 +5,7 @@ BUFSIZE=4096
 
 MSG_CONTENT=0
 BROADCAST_NODES=1
+SHUTDOWN = 9
 
 TEST_HOST='127.0.0.1'
 
@@ -28,11 +29,11 @@ def receive(my_port):
                 connected_nodes = broadcast(node_msg_json)
                 print('new node:', sender, '| connected_nodes:', connected_nodes)
             print(sender, '->', my_port, '| Content:', content)
-            if content == 'quit':
-                break
         elif msg_type == BROADCAST_NODES:
             connected_nodes = set(content)
             print('connected_nodes:', connected_nodes)
+        elif msg_type == SHUTDOWN and sender == my_port:
+            break
 
         soc.close()
     
