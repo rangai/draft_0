@@ -1,9 +1,13 @@
 import sys
 import json
 
-from blockchain import TxPool
+from blockchain import (
+    TxPool,
+    GenesisBlock,
+)
 
 tp = TxPool()
+gb = GenesisBlock()
 
 while True:
     cmd = int(input('cmd:'))
@@ -18,5 +22,8 @@ while True:
         tp.add_tx(t)
     elif cmd == 2:
         tp.clear_txs()
+    elif cmd == 3:
+        my_genesis_block = gb.genesis_block()
+        print(my_genesis_block)
     elif cmd == 9:
         break
