@@ -14,8 +14,8 @@ class TxPool:
     def add_tx(self, tx):
         self.txs.append(tx)
     
-    def remove_tx(self, tx):
-        self.txs.remove(tx)
+    def clear_txs(self):
+        self.txs.clear()
     
     def get_txs(self):
         return self.txs
