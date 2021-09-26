@@ -1,3 +1,4 @@
 from django.shortcuts import render
 
-# Create your views here.
+def my_hash_list(request):
+    return render(request, 'my_hash/my_hash_list.html', {})
