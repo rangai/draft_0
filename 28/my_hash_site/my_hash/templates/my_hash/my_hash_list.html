@@ -1,0 +1,11 @@
+{% extends 'my_hash/base.html' %}
+
+{% block content %}
+    {% for hash in hashes %}
+    <div class="hash">
+        <div class="col-md-8">
+            <p>{{ hash.message|linebreaksbr }} | {{ hash.my_hash }}</p>
+        </div>
+    </div>
+    {% endfor %}
+{% endblock %}
