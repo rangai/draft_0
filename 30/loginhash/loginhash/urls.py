@@ -1,4 +1,4 @@
-"""mysite URL Configuration
+"""loginhash URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.2/topics/http/urls/
@@ -16,7 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from myhash.views import top
+
 urlpatterns = [
+    path('', top, name='top'),
+    path('myhash/', include('myhash.urls')),
     path('admin/', admin.site.urls),
-    path('', include('my_login_hash.urls')),
+    path('accounts/', include("accounts.urls")),
 ]
