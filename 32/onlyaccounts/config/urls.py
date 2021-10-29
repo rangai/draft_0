@@ -21,6 +21,7 @@ from message.views import top
 
 urlpatterns = [
     path('', top, name='top'),
+    path('message/', include("message.urls")),
     path('admin/', admin.site.urls),
     path("accounts/", include("accounts.urls")),
 ]

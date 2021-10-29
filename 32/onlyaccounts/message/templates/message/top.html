@@ -2,7 +2,7 @@
 
 {% block main %}
 <div class="welcome">
-    <h1>Yo</h1>
+    <h2><a href="{% url 'receive' %}">Receive</a></h2>
     {% if user.is_authenticated %}
         {% for user in users %}
             <li>{{ user.username }}</li>
