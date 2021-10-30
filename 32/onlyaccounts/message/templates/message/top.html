@@ -4,8 +4,10 @@
 <div class="welcome">
     <h2><a href="{% url 'receive' %}">Receive</a></h2>
     {% if user.is_authenticated %}
-        {% for user in users %}
-            <li>{{ user.username }}</li>
+        {% for u in users %}
+            {% if user.username != u.username %}
+                <li>{{ u.username }}</li>
+            {% endif %}
         {% endfor %}
     {% endif %}
 </div>
